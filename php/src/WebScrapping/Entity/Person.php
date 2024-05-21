@@ -25,4 +25,8 @@ class Person {
     $this->institution = $institution;
   }
 
+  public function __toString() {
+    return "{$this->name} ({$this->institution})";
+  }
+
 }

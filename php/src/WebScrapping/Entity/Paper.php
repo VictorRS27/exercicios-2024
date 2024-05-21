@@ -39,6 +39,16 @@ class Paper {
    * Builder.
    */
   public function __construct($id, $title, $type, $authors = []) {
+    $this->id = $id;
+    $this->title = $title;
+    $this->type = $type;
+    $this->authors = $authors;
   }
 
+  public function __toString() {
+    $authors = implode(', ', array_map(function($author) {
+      return (string)$author;
+    }, $this->authors));
+    return "Paper ID: {$this->id}\nTitle: {$this->title}\nType: {$this->type}\nAuthors: {$authors}\n";
+  }
 }
