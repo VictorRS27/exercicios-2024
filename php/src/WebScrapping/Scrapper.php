@@ -36,17 +36,19 @@ class Scrapper {
         foreach ($spans as $span) {
           //nomes
           $author = $span->textContent;
+          $author = str_replace(";", "", $author);
           //echo "  " . $count2 . ". " . $span->textContent;
           $count2++;
           //universidade
           $titleAttr = $span->getAttribute('title');
-          $parts = explode('/', $titleAttr);
-          $lastPart = end($parts);
-          $univ = $lastPart;
-          //echo "     " . $lastPart . "\n";
-          $persons[]= new Person($author, $univ);
+          $titleAttr = str_replace(";", "", $titleAttr);
+          $titleAttr = str_replace(" /", ",", $titleAttr);
+          $univ = $titleAttr;
+          
+          if (!empty($author) and !empty($univ)) {
+            $persons[]= new Person($author, $univ);    
+          }
         }
-
         //pegando o tipo do paper
         $div_with_type = $xpath->query('.//div[contains(@class, "tags mr-sm")]', $node)->item(0);
         if ($div_with_type) {
@@ -66,5 +68,5 @@ class Scrapper {
 
     return $papers;
   }
-
+  
 }
