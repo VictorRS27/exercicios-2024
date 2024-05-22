@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html  lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" /><script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam-cell.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"ca2f00b40c",applicationID:"109686569"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(10),c=t(11),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(12);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],7:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(9),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],8:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],9:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],10:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],11:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],12:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(10),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!P++){var t=M.info=NREUM.info,e=g.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(O,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+M.offset],null,"api"),c("timing",["load",n]);var r=g.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=v+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===g.readyState&&o()}function o(){c("mark",["domContent",a()+M.offset],null,"api")}var a=t(5),c=t("handle"),f=t(10),u=t("ee"),s=t(8),d=t(6),p=t(2),l=t(3),v=p.getConfiguration("ssl")===!1?"http":"https",m=window,g=m.document,y="addEventListener",h="attachEvent",w=m.XMLHttpRequest,b=w&&w.prototype,E=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:w,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,O={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1215.min.js"},T=w&&b&&b[y]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:T,userAgent:s,disabled:E};if(!E){t(1),t(7),g[y]?(g[y]("DOMContentLoaded",o,l(!1)),m[y]("load",r,l(!1))):(g[h]("onreadystatechange",i),m[h]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var P=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(11),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+<script>(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create", "UA-20085575-34", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");</script>
+<meta name="sentry-trace" content="33758d9b1c5c4b34969cb4be525e773a-faec6913703943e0-1" />
+<meta name="Generator" content="Drupal 8 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="https://proceedings.science/themes/proceedings/gutenberg/images/galoa-favicon.png" type="image/vnd.microsoft.icon" />
+
+    <title>Trabalhos | PROCEEDINGS OF THE 18ᵗʰ NMR USERS MEETING | Galoá Proceedings</title>
+    <link rel="stylesheet" media="all" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.0/dist/instantsearch.min.css" />
+<link rel="stylesheet" media="all" href="https://proceedings.science/core/modules/system/css/components/align.module.css?r7guwz" />
+<link rel="stylesheet" media="all" href="https://proceedings.science/core/modules/system/css/components/fieldgroup.module.css?r7guwz" />
+<link rel="stylesheet" media="all" href="https://proceedings.science/core/modules/system/css/components/container-inline.module.css?r7guwz" />
+<link rel="stylesheet" media="all" href="https://proceedings.science/core/modules/system/css/components/clearfix.module.css?r7guwz" />
+<link rel="stylesheet" media="all" href="https://proceedings.science/core/modules/system/css/components/details.module.css?r7guwz" />
+<link rel="stylesheet" media="all" href="https://proceedings.science/core/modules/system/css/components/hidden.module.css?r7guwz" />
+<link rel="stylesheet" media="all" href="https://proceedings.science/core/modules/system/css/components/item-list.module.css?r7guwz" />
+<link rel="stylesheet" media="all" href="https://proceedings.science/core/modules/system/css/components/js.module.css?r7guwz" />
+<link rel="stylesheet" media="all" href="https://proceedings.science/core/modules/system/css/components/nowrap.module.css?r7guwz" />
+<link rel="stylesheet" media="all" href="https://proceedings.science/core/modules/system/css/components/position-container.module.css?r7guwz" />
+<link rel="stylesheet" media="all" href="https://proceedings.science/core/modules/system/css/components/progress.module.css?r7guwz" />
+<link rel="stylesheet" media="all" href="https://proceedings.science/core/modules/system/css/components/reset-appearance.module.css?r7guwz" />
+<link rel="stylesheet" media="all" href="https://proceedings.science/core/modules/system/css/components/resize.module.css?r7guwz" />
+<link rel="stylesheet" media="all" href="https://proceedings.science/core/modules/system/css/components/sticky-header.module.css?r7guwz" />
+<link rel="stylesheet" media="all" href="https://proceedings.science/core/modules/system/css/components/system-status-counter.css?r7guwz" />
+<link rel="stylesheet" media="all" href="https://proceedings.science/core/modules/system/css/components/system-status-report-counters.css?r7guwz" />
+<link rel="stylesheet" media="all" href="https://proceedings.science/core/modules/system/css/components/system-status-report-general-info.css?r7guwz" />
+<link rel="stylesheet" media="all" href="https://proceedings.science/core/modules/system/css/components/tablesort.module.css?r7guwz" />
+<link rel="stylesheet" media="all" href="https://proceedings.science/core/modules/system/css/components/tree-child.module.css?r7guwz" />
+<link rel="stylesheet" media="all" href="https://proceedings.science/libraries/select2/dist/css/select2.css?r7guwz" />
+<link rel="stylesheet" media="all" href="https://proceedings.science/libraries/select2-bootstrap-theme/dist/select2-bootstrap.min.css?r7guwz" />
+<link rel="stylesheet" media="all" href="https://proceedings.science/modules/galoa/galoa_select2/css/select2.drupal.css?r7guwz" />
+<link rel="stylesheet" media="all" href="https://proceedings.science/modules/contrib/paragraphs/css/paragraphs.unpublished.css?r7guwz" />
+<link rel="stylesheet" media="all" href="https://proceedings.science/core/modules/layout_discovery/layouts/onecol/onecol.css?r7guwz" />
+<link rel="stylesheet" media="all" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Roboto+Slab:300,400,700|Roboto:300,400,500,700,900|Josefin+Sans:300,400,500,700,900|Quicksand:300,400,500,700,900" />
+<link rel="stylesheet" media="all" href="https://proceedings.science/themes/proceedings/dewey/css/style.css?r7guwz" />
+<link rel="stylesheet" media="all" href="https://proceedings.science/themes/proceedings/dewey/assets/fontawesome/css/all.min.css?r7guwz" />
+
+
+<!--[if lte IE 8]>
+<script src="https://proceedings.science/core/assets/vendor/html5shiv/html5shiv.min.js?v=3.7.3"></script>
+<![endif]-->
+
+  </head>
+  <body class="palette-magnificent-forest path-proceedings has-glyphicons">
+    <a href="#main-content" class="visually-hidden focusable skip-link">
+      Skip to main content
+    </a>
+
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+
+<div class="notifications-wrapper">
+  <courier-toast></courier-toast>
+  <courier-inbox></courier-inbox>
+</div>
+
+<script type="text/javascript">
+  window.courierConfig = {
+    clientKey: "OTZlZWM4NDUtMWQ4OS00OGEyLWIxZDMtMzIxNDZjNmZkYTA2L3Rlc3Q=",
+    userId: null,
+  };
+</script>
+<script src="https://courier-components-xvdza5.s3.amazonaws.com/latest.js"></script>
+
+<div class="sidebar" role="sidebar">
+  <div class="bg-gradient px-lg title-wrapper" role="title">
+  <span class="col-xs-2 visible-xs" data-toggle="menu" data-target="#main-menu">
+    <i class="fa fa-2x fa-bars"></i>
+  </span>
+  <div class="flex-col col-xs-8 col-sm-12">
+    <h2 class="m-none acronym text-center">18nmrmeeting</h2>
+    <div class="visible-xs">
+      <div class="flex-row-center-horizontal">
+                      </div>
+    </div>
+  </div>
+  <span class="col-xs-2 visible-xs">
+    <div class="user-menu-wrapper">
+      <a href="https://proceedings.science/user/login/ashnazg?destination=/proceedings/100227/papers" class="btn btn-link f-primary">Login</a>
+  </div>
+  </span>
+</div>
+
+<div class="sidebar-body" id="main-menu">
+  <div class="series-logo bg-lighten my-md">
+
+            <div class="field field--name-teaser-logo field--type-image field--label-hidden field--item">  <img src="https://proceedings.science/sites/default/files/proceedings_files/teaser/w.png" width="800" height="800" alt="" class="img-responsive" />
+
+</div>
+
+      </div>
+
+  <div class="menu-wrapper">
+      <div class="region region-navigation">
+    <section id="block-menuofproceedingsseries" class="block block-proceedings block-proceedings-realm-menu clearfix">
+
+
+
+
+<nav class="series-navbar">
+              <ul class="series-menu list-unstyled">
+                    <li class="series-menu-item bg-lighten-hover bg-active">
+        <a href="https://proceedings.science/18nmrmeeting-2021/apresentation" data-drupal-link-system-path="proceedings/100227/pages/1642">Apresentation</a>
+              </li>
+                <li class="series-menu-item bg-lighten-hover bg-active">
+        <a href="https://proceedings.science/18nmrmeeting-2021/committee" data-drupal-link-system-path="proceedings/100227/pages/1643">Committee</a>
+              </li>
+                <li class="series-menu-item bg-lighten-hover bg-active active">
+        <a href="https://proceedings.science/18nmrmeeting-2021/trabalhos" data-drupal-link-system-path="proceedings/100227/papers">Papers</a>
+              </li>
+                <li class="series-menu-item bg-lighten-hover bg-active">
+        <a href="https://proceedings.science/18nmrmeeting-2021/autores" data-drupal-link-system-path="proceedings/100227/authors">Authors</a>
+              </li>
+                <li class="series-menu-item bg-lighten-hover bg-active">
+        <a href="https://proceedings.science/18nmrmeeting-2021/eixos-tematicos" data-drupal-link-system-path="proceedings/100227/tracks">Tracks</a>
+              </li>
+                <li class="series-menu-item bg-lighten-hover bg-active">
+        <a href="https://proceedings.science/18nmrmeeting-2021/contact" data-drupal-link-system-path="proceedings/100227/pages/1644">Contact</a>
+              </li>
+                <li class="series-menu-item bg-lighten-hover bg-active">
+        <a href="https://proceedings.science/18nmrmeeting-2021/feed" data-drupal-link-system-path="proceedings/100227/ops-activity-feed">Feed</a>
+              </li>
+                <li class="series-menu-item bg-lighten-hover bg-active">
+        <a href="https://proceedings.science/18nmrmeeting-2021/videos" data-drupal-link-system-path="proceedings/100227/videos">Video</a>
+              </li>
+
+
+    </ul>
+
+</nav>
+
+
+  </section>
+
+
+  </div>
+
+  </div>
+
+  <div class="visible-xs">
+      </div>
+</div>
+</div>
+
+<div class="expand flex-col">
+  <header class="header bg-lighten px-xlg hidden-xs">
+    <div class="flex-col expand">
+      <div class="flex-col expand">
+          <h1 class="series-title">
+
+    PROCEEDINGS OF THE 18ᵗʰ NMR USERS MEETING
+  </h1>
+
+
+      </div>
+      <div class="flex-row">
+                      </div>
+    </div>
+            <div class="user-menu-wrapper">
+      <a href="https://proceedings.science/user/login/ashnazg?destination=/proceedings/100227/papers" class="btn btn-link f-primary">Login</a>
+  </div>
+  </header>
+
+  <section class="main" role="main">
+    <div class="row">
+
+          </div>
+          <div class="region region-content">
+    <div data-drupal-messages-fallback class="hidden"></div><section class="papers-list-container">
+  <div class="row">
+    <div class="mb-md col-sm-12 col-md-4 col-lg-4 col-md-push-8 col-lg-push-8">
+      <div class="form-group">  <label class="m-none" for="search">
+    <h4 class="refinement-title">  <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+
+    </div>
+  </div>
+</h4>
+  </label>
+
+<div class="form-group has-feedback search-container" id="search"></div>
+
+
+  <label class="m-none" for="category">
+    <h4 class="refinement-title">  <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+
+    </div>
+  </div>
+</h4>
+  </label>
+
+<div id="category-facet">
+
+
+    <script type="text/template" id="category-item-template">
+      <div class="checkbox">
+        <label class="hit-category">
+          <input type="checkbox" {{# isRefined }}checked {{/isRefined}} value="{{{ value }}}" />
+          <span class="cr"><i class="cr-icon fa fa-check"></i></span>
+          {{{ value }}}
+        </label>
+      </div>
+    </script>
+
+
+</div>
+
+
+  <label class="m-none" for="tracks">
+    <h4 class="refinement-title">  <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+
+    </div>
+  </div>
+</h4>
+  </label>
+
+<div id="tracks-facet">
+
+
+    <script type="text/template" id="track-item-template">
+      <div class="checkbox">
+        <label class="hit-track">
+          <input type="checkbox" {{# isRefined }}checked {{/isRefined}} value="{{{ value }}}"/>
+          <span class="cr"><i class="cr-icon fa fa-check"></i></span>
+            {{{ label }}}
+        </label>
+      </div>
+    </script>
+
+
+</div>
+
+
+  <label class="m-none" for="keywords">
+    <h4 class="refinement-title">  <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+
+    </div>
+  </div>
+</h4>
+  </label>
+
+<div id="keyword-facet">
+
+
+    <script type="text/template" id="keyword-item-template">
+      <div class="checkbox">
+        <label class="hit-keyword">
+          <input type="checkbox" {{# isRefined }}checked {{/isRefined}} value="{{{ value }}}"></input>
+          <span class="cr"><i class="cr-icon fa fa-check"></i></span>
+            {{{ value }}}
+        </label>
+      </div>
+    </script>
+
+
+</div>
+</div>
+
+    </div>
+
+    <div class="col-sm-12 col-md-8 col-lg-8 col-md-pull-4 col-lg-pull-4">
+
+        <a href="https://proceedings.science/proceedings/100227/_papers/137458" class="paper-card p-lg bd-gradient-left"><h4 class="my-xs paper-title">Structural elucidation of a novel pyrrolizidine alkaloid isolated from Crotalaria retusa L.</h4><div class="authors"><span title="Departamento de Química / Centro de Ciências Exatas e Tecnológicas / Universidade Federal de Viçosa - Campus Viçosa">Bryan Nickson Santana Pinto;</span> <span title="Departamento de Química / Centro de Ciências Exatas e Tecnológicas / Universidade Federal de Viçosa - Campus Viçosa">Gabriella Almeida  Moura;</span> <span title="Departamento de Química / Centro de Ciências Exatas e Tecnológicas / Universidade Federal de Viçosa - Campus Viçosa">Antonio Demuner;</span> <span title="Departamento de Química / Centro de Ciências Exatas e Tecnológicas / Universidade Federal de Viçosa - Campus Viçosa">Elson Santiago Alvarenga;</span> </div><div><div class="tags mr-sm">Poster Presentation</div><div class="tags flex-row mr-sm"><div class="expand"></div><div class="volume-info">137458</div></div></div></a><a href="https://proceedings.science/proceedings/100227/_papers/137459" class="paper-card p-lg bd-gradient-left"><h4 class="my-xs paper-title">INVERSE LAPLACE TRANSFORM FOR SIGNAL ANALYSIS OF LOW FIELD NUCLEAR MAGNETIC RESONANCE</h4><div class="authors"><span title="Departamento de Química  / Instituto de Ciências Exatas  / Universidade Federal de Minas Gerais">Tiago   Bueno de Moraes;</span> </div><div><div class="tags mr-sm">Poster Presentation</div><div class="tags flex-row mr-sm"><div class="expand"></div><div class="volume-info">137459</div></div></div></a>
+
+  </ul>
+      <div class="pagination-container"></div>
+    </div>
+  </div>
+</section>
+
+  </div>
+
+  </section>
+
+  <section class="footer mb-lg" role="footer">
+    <div class="logo p-md">
+  <div><img class="galoa-logo" src="https://proceedings.science/themes/proceedings/dewey/images/galoa-logo.svg"/></div>
+  <div><a href="https://galoa.com.br/eventos-cientificos/proceedings-e-anais-de-eventos" class="galoa-btn my-sm" target="_blank">Learn more</a></div>
+</div>
+
+<div class="description p-md">
+  <p>Preserve the memory of the conference and increase the reach of the scientific knowledge is the reason why Galoá Proceedings was created.</p>
+    <p>The conference papers published here are open access, and our indexing keeps the papers presented at the conference easy to find and cite.</p></div>
+  </section>
+</div>
+
+<div class="modal fade" id="modal-doi" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+
+      <div class="modal-header bg-primary">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" class="modal-title">
+          How to cite this proceedings?
+        </h4>
+      </div>
+
+      <div class="modal-body">
+        <p>
+          This proceedings is identified by a  <strong> DOI </strong> , for use in citations or bibliographic references.
+          <strong> Attention: </strong> this is not a DOI for the paper and as such cannot be used in Lattes to identify a particular work.
+        </p>
+
+        <p>
+                  </p>
+
+        <p>
+          Check the link  <strong> "How to cite"  </strong> in the paper's page, to see how to properly cite the paper
+        </p>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+  </div>
+
+
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"proceedings\/100227\/papers","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"pt-br","currentQuery":{"111":""}},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"galoa_tracking":{"posthog":{"api":"https:\/\/pph.proceedings.science","key":"LipPIyeWGimmwNp27zFYaSTCuj_evOgszgSijgLbZ4o","events":[]},"wootric":{"account_token":"NPS-362ab487","config":false},"hotjar":{"siteId":1744279,"routeName":"proceedings_paper.papers"},"user":[]},"google_analytics":{"trackOutbound":true,"trackMailto":true,"trackDownload":true,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"},"raven":{"options":{"dsn":"https:\/\/64636939bd024a3c9efe6e5736cc628b@o106681.ingest.sentry.io\/5437672","environment":"live","release":"ecbef5642","integrations":[],"tracesSampleRate":1,"autoSessionTracking":true,"sendClientReports":null,"ignoreErrors":["Non-Error exception captured","\u003Cunknown\u003E"]}},"proceedings_id":"100227","availableLanguages":["en"],"proceedingsPrefix":"Vol 1, 2021","indexes":{"knowledge_areas":{"default":"prod_proceedings_knowledge_area","order_views":"prod_proceedings_knowledge_area_order_views","order_downloads":"prod_proceedings_knowledge_area_order_downloads"},"events":{"default":"prod_proceedings_events","order_views":"prod_proceedings_events_order_views","order_downloads":"prod_proceedings_events_order_downloads"},"papers":{"default":"prod_proceedings_papers","order_views":"prod_proceedings_papers_order_views","order_downloads":"prod_proceedings_papers_order_downloads","settings":{"attributesForFaceting":["paper_status","proceedings.year","hierarchical_knowledge_areas","hierarchical_knowledge_areas.lvl0","hierarchical_knowledge_areas.lvl1","hierarchical_knowledge_areas.lvl2","hierarchical_knowledge_areas.lvl3","hierarchical_knowledge_areas.lvl4","hierarchical_knowledge_areas.lvl5","authors.id","proceedings.title","proceeding.title","searchable(proceedings.id)","searchable(proceeding.id)","searchable(track.label)","searchable(track.title.en)","searchable(track.title.es)","searchable(track.title.pt-br)","searchable(track.id)","searchable(keywords.value)","searchable(keywords)","searchable(keywords.en)","searchable(keywords.es)","searchable(keywords.pt-br)","searchable(category.id)","searchable(category.title)","searchable(category.title.pt-br)","searchable(category.title.en)","searchable(category.title.es)","searchable(proceedings.search_name.pt_br)","searchable(proceedings.search_name.pt-br)","searchable(proceedings.search_name.en)","searchable(proceedings.search_name.es)","searchable(proceeding.search_name.pt_br)","searchable(proceeding.search_name.pt-br)","searchable(proceeding.search_name.en)","searchable(proceeding.search_name.es)","realm","searchable(submissionId)","video_exists"]}}},"config_filters":{"filter_default":5,"filter_by_category":"5","filter_by_tracks":"5","filter_by_keywords":"5"},"filters":"proceeding.id:100227"},"defaultLangcode":"en","proceedings_analytics":{"key":"uq33ytv212"},"bootstrap":{"forms_has_error_value_toggle":1,"modal_animation":1,"modal_backdrop":"true","modal_focus_input":1,"modal_keyboard":1,"modal_select_text":1,"modal_show":1,"modal_size":"","popover_enabled":1,"popover_animation":1,"popover_auto_close":1,"popover_container":"body","popover_content":"","popover_delay":"0","popover_html":0,"popover_placement":"right","popover_selector":"","popover_title":"","popover_trigger":"click","tooltip_enabled":1,"tooltip_animation":1,"tooltip_container":"body","tooltip_delay":"0","tooltip_html":0,"tooltip_placement":"auto left","tooltip_selector":"","tooltip_trigger":"hover"},"user":{"uid":0,"permissionsHash":"2a310a29cc28771d9fb2b3a42a090d71ea90e12cb5a9b9695ad766cd1ba1d9fe"}}</script>
+<script src="https://proceedings.science/core/assets/vendor/jquery/jquery.min.js?v=3.5.1"></script>
+<script src="https://proceedings.science/core/assets/vendor/underscore/underscore-min.js?v=1.13.1"></script>
+<script src="https://proceedings.science/core/assets/vendor/jquery-once/jquery.once.min.js?v=2.2.3"></script>
+<script src="https://proceedings.science/core/misc/drupalSettingsLoader.js?v=8.9.20"></script>
+<script src="https://proceedings.science/core/misc/drupal.js?v=8.9.20"></script>
+<script src="https://proceedings.science/core/misc/drupal.init.js?v=8.9.20"></script>
+<script src="https://proceedings.science/libraries/select2/dist/js/select2.full.min.js?r7guwz"></script>
+<script src="https://proceedings.science/modules/galoa/galoa_select2/js/select2.drupal.js?r7guwz"></script>
+<script src="https://proceedings.science/modules/galoa/galoa_tracking/js/posthog.js?v=1.4.4" async="async"></script>
+<script src="https://cdn.wootric.com/wootric-sdk.js"></script>
+<script src="https://proceedings.science/modules/galoa/galoa_tracking/js/wootric.js?r7guwz"></script>
+<script src="https://proceedings.science/modules/galoa/galoa_tracking/js/hotjar.js?v=6"></script>
+<script src="https://proceedings.science/modules/contrib/google_analytics/js/google_analytics.js?v=8.9.20"></script>
+<script src="https://proceedings.science/modules/contrib/raven/js/bundle.tracing.min.js?v=6.14.0"></script>
+<script src="https://proceedings.science/modules/contrib/raven/js/raven.js?v=3.2.0"></script>
+<script src="https://proceedings.science/themes/contrib/bootstrap/js/drupal.bootstrap.js?r7guwz"></script>
+<script src="https://proceedings.science/themes/contrib/bootstrap/js/attributes.js?r7guwz"></script>
+<script src="https://proceedings.science/themes/contrib/bootstrap/js/theme.js?r7guwz"></script>
+<script src="https://proceedings.science/themes/proceedings/dewey/assets/bootstrap/bootstrap.min.js?r7guwz"></script>
+<script src="https://proceedings.science/themes/galoa-gauss/drupal/gauss_base/js/handle-courier-notification.js?r7guwz"></script>
+<script src="https://proceedings.science/themes/proceedings/dewey/js/menu.js?r7guwz"></script>
+<script src="https://proceedings.science/themes/proceedings/dewey/js/languages.js?r7guwz"></script>
+<script src="https://proceedings.science/themes/proceedings/dewey/js/pagination.js?r7guwz"></script>
+<script src="https://proceedings.science/themes/proceedings/dewey/js/modals.js?r7guwz"></script>
+<script src="https://proceedings.science/themes/proceedings/dewey/js/clipboard.js?r7guwz"></script>
+<script src="https://proceedings.science/themes/proceedings/dewey/js/prevent-double-click.js?r7guwz"></script>
+<script src="https://proceedings.science/themes/proceedings/dewey/assets/list-js/list.js?r7guwz"></script>
+<script src="https://proceedings.science/themes/proceedings/dewey/assets/clipboard/clipboard.min.js?r7guwz"></script>
+<script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3/dist/instantsearch.min.js"></script>
+<script src="https://proceedings.science/modules/proceedings/proceedings_analytics/js/analytics.js?r7guwz"></script>
+<script src="https://proceedings.science/themes/contrib/bootstrap/js/popover.js?r7guwz"></script>
+<script src="https://proceedings.science/themes/contrib/bootstrap/js/tooltip.js?r7guwz"></script>
+
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","licenseKey":"ca2f00b40c","applicationID":"109686569","transactionName":"Y1UGMkIHXEZYVxFbClofJQVED11bFnAXRxVVXDgWQglRUFxQDFwCR28FClcJXlxYaCZdC0BCCwpcA0BpaUYKUQBRVA0IVxVzWV5bCVsEd1gBBVs0XUBNUSZdC0BCCwpcA0AYB1cNVwZfYgsTRANiVElRF0E=","queueTime":0,"applicationTime":268,"atts":"TxIFRAodT0g=","errorBeacon":"bam-cell.nr-data.net","agent":""}</script></body>
+</html>
