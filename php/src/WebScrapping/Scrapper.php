@@ -25,20 +25,16 @@ class Scrapper {
         //pega o título de cada paper
         $subtitle_h4 = $xpath->query('.//h4', $node)->item(0); 
         $title = $subtitle_h4 ? $subtitle_h4->textContent : '';
-        //echo $count . ". " . $title . "\n";
-        $count ++;
 
         //Leitura dos autores
         $spans = $xpath->query('.//span', $node);
         $persons = [];
-        $count2 = 0;
-        //echo "Autores:\n";
+
         foreach ($spans as $span) {
           //nomes
           $author = $span->textContent;
           $author = str_replace(";", "", $author);
-          //echo "  " . $count2 . ". " . $span->textContent;
-          $count2++;
+
           //universidade
           $titleAttr = $span->getAttribute('title');
           $titleAttr = str_replace(";", "", $titleAttr);
@@ -49,6 +45,7 @@ class Scrapper {
             $persons[]= new Person($author, $univ);    
           }
         }
+        
         //pegando o tipo do paper
         $div_with_type = $xpath->query('.//div[contains(@class, "tags mr-sm")]', $node)->item(0);
         if ($div_with_type) {
