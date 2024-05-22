@@ -50,7 +50,6 @@ class Scrapper {
         $div_with_type = $xpath->query('.//div[contains(@class, "tags mr-sm")]', $node)->item(0);
         if ($div_with_type) {
             $type = $div_with_type->textContent;
-            
         }
 
         //criando objeto Paper
